@@ -1,0 +1,8 @@
+# Ambiente virtual Python
+venv/
+
+# Relatórios e logs de execução
+reports/
+
+# Arquivos do VSCode
+.vscode/
