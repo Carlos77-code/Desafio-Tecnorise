@@ -3,7 +3,7 @@ venv/
 
 # Relatórios e logs de execução
 .reports
-reports/
+/reports/
 
 # Arquivos do VSCode
 .vscode/
