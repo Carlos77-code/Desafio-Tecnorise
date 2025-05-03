@@ -1,0 +1,1380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-05-03T19:33:16.357961" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Cadastro Produto" source="D:\carlo\Projeto\Desafio-Tecnorise\test\suites\test_cadastro_produto.robot">
+<test id="s1-t1" name="Cenario 01: Cadastro de produto dados validos" line="12">
+<kw name="Abrir navegador" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:16.758687" level="INFO">Opening browser 'chrome' to base url 'https://tecnorise-qa-interview.pages.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-03T19:33:16.758459" elapsed="2.565194"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.323890" elapsed="0.033138"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:16.757875" elapsed="2.599282"/>
+</kw>
+<kw name="Validar pagina deve conter o title" owner="page_cadastro_produto">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:19.362987" level="INFO">Page title is 'Teste automação QA'.</msg>
+<arg>Teste automação QA</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.357756" elapsed="0.005335"/>
+</kw>
+<arg>Teste automação QA</arg>
+<status status="PASS" start="2025-05-03T19:33:19.357474" elapsed="0.005857"/>
+</kw>
+<kw name="Deve poder clicar no botao Adicionar Produto" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.365003" elapsed="0.026549"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:19.391892" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[1]/button'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.391716" elapsed="0.068462"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:19.364076" elapsed="0.096230"/>
+</kw>
+<kw name="Validar se abriu modal com formulario para cadastro" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(), "Cadastrar Produto")]</arg>
+<arg>Cadastrar Produto</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.460968" elapsed="0.020866"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:19.460662" elapsed="0.021282"/>
+</kw>
+<kw name="Preencher formulario campo Nome" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[1]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.482502" elapsed="0.017212"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.499873" elapsed="0.015785"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:19.516141" level="INFO">Typing text 'Teclado' into text field 'xpath=//input[@placeholder="Digite o nome do produto"]'.</msg>
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.515890" elapsed="0.083678"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:19.600397" level="INFO">${NOME_PRODUTO} = Teclado</msg>
+<arg>${NOME_PRODUTO}</arg>
+<arg>${produto}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.599749" elapsed="0.000707"/>
+</kw>
+<arg>Teclado</arg>
+<status status="PASS" start="2025-05-03T19:33:19.482243" elapsed="0.118284"/>
+</kw>
+<kw name="Preencher formulario campo Preco" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.601039" elapsed="0.013576"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.614771" elapsed="0.012787"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:19.627912" level="INFO">Typing text '160.00' into text field 'xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.627715" elapsed="0.056509"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:19.684982" level="INFO">${VALOR_PRODUTO} = 160.00</msg>
+<arg>${VALOR_PRODUTO}</arg>
+<arg>${valor}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.684396" elapsed="0.000643"/>
+</kw>
+<arg>160.00</arg>
+<status status="PASS" start="2025-05-03T19:33:19.600802" elapsed="0.084312"/>
+</kw>
+<kw name="Preencher formulario campo Descricao" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[3]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.685566" elapsed="0.015119"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.700879" elapsed="0.012996"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:19.714347" level="INFO">Typing text 'Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível' into text field 'xpath=//textarea[@placeholder="Descreva o produto"]'.</msg>
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:19.714064" elapsed="0.732646"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:20.447484" level="INFO">${TEXTO_DESCRICAO} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.446881" elapsed="0.000760"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:19.685357" elapsed="0.762367"/>
+</kw>
+<kw name="Deve poder clicar no botao Salvar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.448234" elapsed="0.018627"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:20.467174" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.467016" elapsed="0.063221"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:20.448002" elapsed="0.082340"/>
+</kw>
+<kw name="Validar tela de Produtos Cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), "Produtos Cadastrados")]</arg>
+<arg>Produtos Cadastrados</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.531059" elapsed="0.014687"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:20.530712" elapsed="0.015134"/>
+</kw>
+<kw name="Validar Produtos Cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.546419" elapsed="0.014531"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:20.573330" level="INFO">${produto_cadastrado} = Teclado</msg>
+<var>${produto_cadastrado}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.561107" elapsed="0.012265"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${produto_cadastrado}</arg>
+<arg>${NOME_PRODUTO}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.573515" elapsed="0.000211"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:20.573943" level="INFO">Teclado</msg>
+<arg>${produto_cadastrado}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.573834" elapsed="0.000151"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:20.574177" level="INFO">Teclado</msg>
+<arg>${NOME_PRODUTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.574074" elapsed="0.000142"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:20.546191" elapsed="0.028088"/>
+</kw>
+<kw name="Validar Valor do Produto Cadastrado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]</arg>
+<arg>160.00</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.574803" elapsed="0.018185"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:20.593288" level="INFO">160.00</msg>
+<arg>${VALOR_PRODUTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.593142" elapsed="0.000190"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:20.574576" elapsed="0.018818"/>
+</kw>
+<kw name="Validar Descricao do Produto Cadastrado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.593876" elapsed="0.015062"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:20.622483" level="INFO">${descricao_cadastrada} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<var>${descricao_cadastrada}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.609302" elapsed="0.013229"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${descricao_cadastrada}</arg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.622686" elapsed="0.000196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:20.623089" level="INFO">Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível</msg>
+<arg>${descricao_cadastrada}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.622983" elapsed="0.000156"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:20.623333" level="INFO">Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.623228" elapsed="0.000151"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:20.593663" elapsed="0.029802"/>
+</kw>
+<kw name="Fechar navegador" owner="hooks" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-03T19:33:20.624670" elapsed="2.126820"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:20.624358" elapsed="2.127241"/>
+</kw>
+<tag>cadastro_dados_validos</tag>
+<status status="PASS" start="2025-05-03T19:33:16.757157" elapsed="5.994710"/>
+</test>
+<test id="s1-t2" name="Cenario 02: Editar Cadastro de produto" line="26">
+<kw name="Abrir navegador" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:22.753606" level="INFO">Opening browser 'chrome' to base url 'https://tecnorise-qa-interview.pages.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-03T19:33:22.753437" elapsed="2.537529"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.291521" elapsed="0.039028"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:22.753219" elapsed="2.577438"/>
+</kw>
+<kw name="Deve poder clicar no botao Adicionar Produto" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.331491" elapsed="0.027144"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:25.359063" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[1]/button'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.358846" elapsed="0.069030"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:25.331110" elapsed="0.096870"/>
+</kw>
+<kw name="Validar se abriu modal com formulario para cadastro" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(), "Cadastrar Produto")]</arg>
+<arg>Cadastrar Produto</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.428500" elapsed="0.019873"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:25.428280" elapsed="0.020209"/>
+</kw>
+<kw name="Preencher formulario campo Nome" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[1]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.449118" elapsed="0.016789"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.466063" elapsed="0.015235"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:25.481685" level="INFO">Typing text 'Teclado' into text field 'xpath=//input[@placeholder="Digite o nome do produto"]'.</msg>
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.481469" elapsed="0.080741"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:25.562613" level="INFO">${NOME_PRODUTO} = Teclado</msg>
+<arg>${NOME_PRODUTO}</arg>
+<arg>${produto}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.562395" elapsed="0.000266"/>
+</kw>
+<arg>Teclado</arg>
+<status status="PASS" start="2025-05-03T19:33:25.448842" elapsed="0.113917"/>
+</kw>
+<kw name="Preencher formulario campo Preco" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.563422" elapsed="0.015476"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.579076" elapsed="0.014155"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:25.593585" level="INFO">Typing text '160.00' into text field 'xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.593381" elapsed="0.058987"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:25.652759" level="INFO">${VALOR_PRODUTO} = 160.00</msg>
+<arg>${VALOR_PRODUTO}</arg>
+<arg>${valor}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.652545" elapsed="0.000259"/>
+</kw>
+<arg>160.00</arg>
+<status status="PASS" start="2025-05-03T19:33:25.563095" elapsed="0.089778"/>
+</kw>
+<kw name="Preencher formulario campo Descricao" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[3]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.653426" elapsed="0.013742"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.667316" elapsed="0.012954"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:25.680616" level="INFO">Typing text 'Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível' into text field 'xpath=//textarea[@placeholder="Descreva o produto"]'.</msg>
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:25.680421" elapsed="0.724390"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.405204" level="INFO">${TEXTO_DESCRICAO} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.404973" elapsed="0.000278"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:25.653200" elapsed="0.752120"/>
+</kw>
+<kw name="Deve poder clicar no botao Salvar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.405805" elapsed="0.013907"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:26.420020" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.419857" elapsed="0.059593"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.405581" elapsed="0.074015"/>
+</kw>
+<kw name="Validar tela de Produtos Cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), "Produtos Cadastrados")]</arg>
+<arg>Produtos Cadastrados</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.480198" elapsed="0.015787"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.479953" elapsed="0.016133"/>
+</kw>
+<kw name="Validar Produtos Cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.496550" elapsed="0.014836"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:26.523707" level="INFO">${produto_cadastrado} = Teclado</msg>
+<var>${produto_cadastrado}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.511541" elapsed="0.012214"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${produto_cadastrado}</arg>
+<arg>${NOME_PRODUTO}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.523929" elapsed="0.000213"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.524380" level="INFO">Teclado</msg>
+<arg>${produto_cadastrado}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.524260" elapsed="0.000162"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.524649" level="INFO">Teclado</msg>
+<arg>${NOME_PRODUTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.524532" elapsed="0.000165"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.496333" elapsed="0.028428"/>
+</kw>
+<kw name="Validar Valor do Produto Cadastrado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]</arg>
+<arg>160.00</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.525939" elapsed="0.020587"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.546888" level="INFO">160.00</msg>
+<arg>${VALOR_PRODUTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.546690" elapsed="0.000277"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.525600" elapsed="0.021467"/>
+</kw>
+<kw name="Validar Descricao do Produto Cadastrado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.547748" elapsed="0.016287"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:26.577256" level="INFO">${descricao_cadastrada} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<var>${descricao_cadastrada}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.564265" elapsed="0.013034"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${descricao_cadastrada}</arg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.577440" elapsed="0.000190"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.577882" level="INFO">Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível</msg>
+<arg>${descricao_cadastrada}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.577770" elapsed="0.000160"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.578124" level="INFO">Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.578020" elapsed="0.000149"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.547542" elapsed="0.030690"/>
+</kw>
+<kw name="Deve poder clicar no botao Editar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[2]/button[1]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.578701" elapsed="0.012663"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:26.591669" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[2]/ul/li/div[2]/button[1]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[2]/button[1]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.591513" elapsed="0.054206"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.578495" elapsed="0.067323"/>
+</kw>
+<kw name="Validar se abriu modal com formulario para Editar Produto" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(), "Editar Produto")]</arg>
+<arg>Editar Produto</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.646345" elapsed="0.017606"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.646106" elapsed="0.017947"/>
+</kw>
+<kw name="Deve poder editar formulario campo Nome" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[1]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.664597" elapsed="0.011339"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:26.676583" level="INFO">Typing text 'Monitor' into text field 'xpath=//input[@placeholder="Digite o nome do produto"]'.</msg>
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>${produto_editado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.676159" elapsed="0.090080"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.767104" level="INFO">${NOME_PRODUTO_EDITADO} = Monitor</msg>
+<arg>${NOME_PRODUTO_EDITADO}</arg>
+<arg>${produto_editado}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.766485" elapsed="0.000668"/>
+</kw>
+<arg>Monitor</arg>
+<status status="PASS" start="2025-05-03T19:33:26.664329" elapsed="0.102894"/>
+</kw>
+<kw name="Deve poder editar formulario campo Preco" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.767796" elapsed="0.010123"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.778074" elapsed="0.009024"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:26.787505" level="INFO">Typing text '1569.32' into text field 'xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>${valor_editado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.787292" elapsed="0.063561"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:26.851653" level="INFO">${VALOR_PRODUTO_EDITADO} = 1569.32</msg>
+<arg>${VALOR_PRODUTO_EDITADO}</arg>
+<arg>${valor_editado}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.851055" elapsed="0.000656"/>
+</kw>
+<arg>1569.32</arg>
+<status status="PASS" start="2025-05-03T19:33:26.767485" elapsed="0.084312"/>
+</kw>
+<kw name="Deve poder editar formulario campo Descricao" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[3]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.852768" elapsed="0.012816"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.865762" elapsed="0.010332"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:26.876573" level="INFO">Typing text 'Monitor Gamer AOC DESTINY 25" 240Hz 0,5ms FreeSync Premium 25G3ZM' into text field 'xpath=//textarea[@placeholder="Descreva o produto"]'.</msg>
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>${DESCRICAO_EDITADA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.876350" elapsed="0.115125"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.852220" elapsed="0.139368"/>
+</kw>
+<kw name="Deve poder clicar no botao Salvar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:26.992134" elapsed="0.012247"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:27.004701" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.004542" elapsed="0.049761"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:26.991877" elapsed="0.062527"/>
+</kw>
+<kw name="Validar tela de Produtos Cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), "Produtos Cadastrados")]</arg>
+<arg>Produtos Cadastrados</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.055104" elapsed="0.011679"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:27.054864" elapsed="0.012019"/>
+</kw>
+<kw name="Validar Produto editado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.067361" elapsed="0.010611"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:27.088334" level="INFO">${captura_produto_editado} = Monitor</msg>
+<var>${captura_produto_editado}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.078143" elapsed="0.010238"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${captura_produto_editado}</arg>
+<arg>${NOME_PRODUTO_EDITADO}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.088540" elapsed="0.000231"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:27.089044" level="INFO">Monitor</msg>
+<arg>${captura_produto_editado}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.088914" elapsed="0.000171"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:27.089286" level="INFO">Monitor</msg>
+<arg>${NOME_PRODUTO_EDITADO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.089175" elapsed="0.000150"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:27.067132" elapsed="0.022255"/>
+</kw>
+<kw name="Validar Valor editado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]</arg>
+<arg>${VALOR_PRODUTO_EDITADO}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.089859" elapsed="0.011402"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:27.101686" level="INFO">1569.32</msg>
+<arg>${VALOR_PRODUTO_EDITADO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.101477" elapsed="0.000258"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:27.089644" elapsed="0.012171"/>
+</kw>
+<kw name="Validar Descricao editada" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.102465" elapsed="0.009461"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:27.123152" level="INFO">${captura_descricao_editada} = Monitor Gamer AOC DESTINY 25" 240Hz 0,5ms FreeSync Premium 25G3ZM</msg>
+<var>${captura_descricao_editada}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.112088" elapsed="0.011107"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${captura_descricao_editada}</arg>
+<arg>${DESCRICAO_EDITADA}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.123335" elapsed="0.000190"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:27.123786" level="INFO">Monitor Gamer AOC DESTINY 25" 240Hz 0,5ms FreeSync Premium 25G3ZM</msg>
+<arg>${captura_descricao_editada}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.123677" elapsed="0.000150"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:27.124018" level="INFO">Monitor Gamer AOC DESTINY 25" 240Hz 0,5ms FreeSync Premium 25G3ZM</msg>
+<arg>${DESCRICAO_EDITADA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.123915" elapsed="0.000142"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:27.102175" elapsed="0.021943"/>
+</kw>
+<kw name="Fechar navegador" owner="hooks" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-03T19:33:27.124595" elapsed="2.126824"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:27.124387" elapsed="2.127141"/>
+</kw>
+<tag>editar_cadastro</tag>
+<status status="PASS" start="2025-05-03T19:33:22.752793" elapsed="6.499006"/>
+</test>
+<test id="s1-t3" name="Cenario 03: Excluir Cadastro de produto" line="49">
+<kw name="Abrir navegador" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:29.253581" level="INFO">Opening browser 'chrome' to base url 'https://tecnorise-qa-interview.pages.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-03T19:33:29.253412" elapsed="2.526082"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-03T19:33:31.779659" elapsed="0.037456"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:29.253198" elapsed="2.564062"/>
+</kw>
+<kw name="Deve poder clicar no botao Adicionar Produto" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:31.817837" elapsed="0.025703"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:31.843858" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[1]/button'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:31.843700" elapsed="0.067535"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:31.817589" elapsed="0.093746"/>
+</kw>
+<kw name="Validar se abriu modal com formulario para cadastro" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(), "Cadastrar Produto")]</arg>
+<arg>Cadastrar Produto</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:31.911859" elapsed="0.021527"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:31.911632" elapsed="0.021857"/>
+</kw>
+<kw name="Preencher formulario campo Nome" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[1]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:31.933993" elapsed="0.015690"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:31.949849" elapsed="0.014851"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:31.965053" level="INFO">Typing text 'Teclado' into text field 'xpath=//input[@placeholder="Digite o nome do produto"]'.</msg>
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:31.964857" elapsed="0.078518"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:32.043748" level="INFO">${NOME_PRODUTO} = Teclado</msg>
+<arg>${NOME_PRODUTO}</arg>
+<arg>${produto}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.043544" elapsed="0.000247"/>
+</kw>
+<arg>Teclado</arg>
+<status status="PASS" start="2025-05-03T19:33:31.933733" elapsed="0.110125"/>
+</kw>
+<kw name="Preencher formulario campo Preco" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.044344" elapsed="0.015160"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.059663" elapsed="0.013347"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:32.073362" level="INFO">Typing text '160.00' into text field 'xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.073164" elapsed="0.057576"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:32.131673" level="INFO">${VALOR_PRODUTO} = 160.00</msg>
+<arg>${VALOR_PRODUTO}</arg>
+<arg>${valor}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.131255" elapsed="0.000481"/>
+</kw>
+<arg>160.00</arg>
+<status status="PASS" start="2025-05-03T19:33:32.044115" elapsed="0.087748"/>
+</kw>
+<kw name="Preencher formulario campo Descricao" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[3]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.133111" elapsed="0.014641"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.147906" elapsed="0.011872"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:32.160138" level="INFO">Typing text 'Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível' into text field 'xpath=//textarea[@placeholder="Descreva o produto"]'.</msg>
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.159939" elapsed="0.714077"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:32.874436" level="INFO">${TEXTO_DESCRICAO} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.874190" elapsed="0.000296"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:32.132597" elapsed="0.741960"/>
+</kw>
+<kw name="Deve poder clicar no botao Salvar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.875090" elapsed="0.016960"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:32.892376" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.892216" elapsed="0.062485"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:32.874848" elapsed="0.079965"/>
+</kw>
+<kw name="Validar tela de Produtos Cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), "Produtos Cadastrados")]</arg>
+<arg>Produtos Cadastrados</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.955406" elapsed="0.015001"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:32.955132" elapsed="0.015392"/>
+</kw>
+<kw name="Validar Produtos Cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.971045" elapsed="0.015157"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:32.997722" level="INFO">${produto_cadastrado} = Teclado</msg>
+<var>${produto_cadastrado}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/strong</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.986368" elapsed="0.011399"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${produto_cadastrado}</arg>
+<arg>${NOME_PRODUTO}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.997919" elapsed="0.000194"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:32.998325" level="INFO">Teclado</msg>
+<arg>${produto_cadastrado}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.998216" elapsed="0.000153"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:32.998589" level="INFO">Teclado</msg>
+<arg>${NOME_PRODUTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.998466" elapsed="0.000168"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:32.970810" elapsed="0.027912"/>
+</kw>
+<kw name="Validar Valor do Produto Cadastrado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]</arg>
+<arg>160.00</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:32.999471" elapsed="0.018609"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:33.018381" level="INFO">160.00</msg>
+<arg>${VALOR_PRODUTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.018236" elapsed="0.000189"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:32.999198" elapsed="0.019290"/>
+</kw>
+<kw name="Validar Descricao do Produto Cadastrado" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.018926" elapsed="0.015053"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:33.046683" level="INFO">${descricao_cadastrada} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<var>${descricao_cadastrada}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[1]/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.034133" elapsed="0.012591"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${descricao_cadastrada}</arg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.046867" elapsed="0.000189"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:33.047273" level="INFO">Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível</msg>
+<arg>${descricao_cadastrada}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.047156" elapsed="0.000166"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-03T19:33:33.047516" level="INFO">Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.047412" elapsed="0.000149"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:33.018731" elapsed="0.028892"/>
+</kw>
+<kw name="Deve poder clicar no botao Excluir" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[2]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.048096" elapsed="0.013095"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:33.061564" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[2]/ul/li/div[2]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[2]/ul/li/div[2]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.061404" elapsed="0.051333"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:33.047884" elapsed="0.064973"/>
+</kw>
+<kw name="Validar pagina sem produtos cadastrados" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[2]/p</arg>
+<arg>Nenhum produto cadastrado.</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.113385" elapsed="0.016489"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:33.113150" elapsed="0.016828"/>
+</kw>
+<kw name="Fechar navegador" owner="hooks" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-03T19:33:33.130517" elapsed="2.149960"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:33.130282" elapsed="2.150387"/>
+</kw>
+<tag>excluir_cadastro</tag>
+<status status="PASS" start="2025-05-03T19:33:29.252743" elapsed="6.028218"/>
+</test>
+<test id="s1-t4" name="Cenario 04: Cadastro de produto campos em branco" line="64">
+<kw name="Abrir navegador" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:35.282821" level="INFO">Opening browser 'chrome' to base url 'https://tecnorise-qa-interview.pages.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-03T19:33:35.282657" elapsed="2.597850"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-03T19:33:37.880664" elapsed="0.038894"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:35.282443" elapsed="2.637218"/>
+</kw>
+<kw name="Deve poder clicar no botao Adicionar Produto" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:37.920287" elapsed="0.022960"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:37.943579" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[1]/button'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:37.943413" elapsed="0.071077"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:37.920009" elapsed="0.094594"/>
+</kw>
+<kw name="Validar se abriu modal com formulario para cadastro" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(), "Cadastrar Produto")]</arg>
+<arg>Cadastrar Produto</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:38.015139" elapsed="0.021262"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:38.014906" elapsed="0.021605"/>
+</kw>
+<kw name="Deve poder clicar no botao Salvar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:38.037095" elapsed="0.015292"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:38.052719" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:38.052551" elapsed="0.066552"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:38.036803" elapsed="0.082408"/>
+</kw>
+<kw name="Devera ser exibida mensagem de obrigatoriedade no campo Nome" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[1]/p</arg>
+<arg>Nome é obrigatório</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:38.119833" elapsed="0.018758"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:38.119490" elapsed="0.019203"/>
+</kw>
+<kw name="Devera ser exibida mensagem de obrigatoriedade no campo Preco" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/p</arg>
+<arg>Preço deve ser positivo</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:38.139179" elapsed="0.013410"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:38.138957" elapsed="0.013744"/>
+</kw>
+<kw name="Fechar navegador" owner="hooks" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-03T19:33:38.153253" elapsed="2.127787"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:38.153010" elapsed="2.128169"/>
+</kw>
+<tag>cadastro_campos_vazios</tag>
+<status status="PASS" start="2025-05-03T19:33:35.281973" elapsed="4.999463"/>
+</test>
+<test id="s1-t5" name="Cenario 05: Cadastro de produto dados invalidos" line="72">
+<kw name="Abrir navegador" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:40.283214" level="INFO">Opening browser 'chrome' to base url 'https://tecnorise-qa-interview.pages.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-03T19:33:40.283040" elapsed="2.682777"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-03T19:33:42.965988" elapsed="0.041315"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:40.282777" elapsed="2.724632"/>
+</kw>
+<kw name="Deve poder clicar no botao Adicionar Produto" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.008082" elapsed="0.024859"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:43.033295" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[1]/button'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.033117" elapsed="0.069820"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:43.007761" elapsed="0.095284"/>
+</kw>
+<kw name="Validar se abriu modal com formulario para cadastro" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(), "Cadastrar Produto")]</arg>
+<arg>Cadastrar Produto</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.103527" elapsed="0.020663"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:43.103303" elapsed="0.021008"/>
+</kw>
+<kw name="Preencher campo Nome alfanumerico" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[1]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.124861" elapsed="0.015577"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.140595" elapsed="0.014834"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:43.155803" level="INFO">Typing text '5191sefvcwefw#$#$@' into text field 'xpath=//input[@placeholder="Digite o nome do produto"]'.</msg>
+<arg>xpath=//input[@placeholder="Digite o nome do produto"]</arg>
+<arg>${alfanumerico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.155590" elapsed="0.091508"/>
+</kw>
+<arg>5191sefvcwefw#$#$@</arg>
+<status status="PASS" start="2025-05-03T19:33:43.124611" elapsed="0.122587"/>
+</kw>
+<kw name="Preencher campo Preco com valor" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.247768" elapsed="0.016446"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.264385" elapsed="0.013003"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:43.277749" level="INFO">Typing text 'e' into text field 'xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>${valor_e}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.277544" elapsed="0.052434"/>
+</kw>
+<arg>e</arg>
+<status status="PASS" start="2025-05-03T19:33:43.247502" elapsed="0.082604"/>
+</kw>
+<kw name="Preencher formulario campo Descricao" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[3]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.330779" elapsed="0.015225"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.346159" elapsed="0.013238"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:43.359748" level="INFO">Typing text 'Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível' into text field 'xpath=//textarea[@placeholder="Descreva o produto"]'.</msg>
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:43.359550" elapsed="0.773891"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:44.133855" level="INFO">${TEXTO_DESCRICAO} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:44.133614" elapsed="0.000303"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:43.330475" elapsed="0.803516"/>
+</kw>
+<kw name="Deve poder clicar no botao Salvar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:44.134461" elapsed="0.014097"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:44.148861" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:44.148707" elapsed="0.059406"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:44.134256" elapsed="0.073954"/>
+</kw>
+<kw name="Devera exibir mensagem de obrigatoriedade no campo Preco" owner="page_cadastro_produto">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${mensagem}</arg>
+<arg>Digite um número.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-03T19:33:44.208741" elapsed="0.000163"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-03T19:33:47.209359" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-03T19:33:44.209027" elapsed="3.000432"/>
+</kw>
+<arg>Digite um número.</arg>
+<status status="PASS" start="2025-05-03T19:33:44.208468" elapsed="3.001076"/>
+</kw>
+<kw name="Fechar navegador" owner="hooks" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-03T19:33:47.210215" elapsed="2.156375"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:47.209964" elapsed="2.156723"/>
+</kw>
+<tag>cadastro_dados_invalidos</tag>
+<status status="PASS" start="2025-05-03T19:33:40.282358" elapsed="9.084847"/>
+</test>
+<test id="s1-t6" name="Cenario 06: Cadastro de produto campos Nome em branco" line="82">
+<kw name="Abrir navegador" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:49.368864" level="INFO">Opening browser 'chrome' to base url 'https://tecnorise-qa-interview.pages.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-03T19:33:49.368698" elapsed="2.556100"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-03T19:33:51.924974" elapsed="0.040428"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:49.368479" elapsed="2.597020"/>
+</kw>
+<kw name="Deve poder clicar no botao Adicionar Produto" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:51.966093" elapsed="0.028181"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:51.994631" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[1]/button'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[1]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:51.994456" elapsed="0.076783"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:51.965826" elapsed="0.105527"/>
+</kw>
+<kw name="Validar se abriu modal com formulario para cadastro" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//h2[contains(text(), "Cadastrar Produto")]</arg>
+<arg>Cadastrar Produto</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.071883" elapsed="0.021995"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:52.071614" elapsed="0.022386"/>
+</kw>
+<kw name="Preencher formulario campo Preco" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.094641" elapsed="0.018737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.113552" elapsed="0.015103"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:52.129032" level="INFO">Typing text '160.00' into text field 'xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[2]/input</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.128828" elapsed="0.080093"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:52.209774" level="INFO">${VALOR_PRODUTO} = 160.00</msg>
+<arg>${VALOR_PRODUTO}</arg>
+<arg>${valor}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.209553" elapsed="0.000276"/>
+</kw>
+<arg>160.00</arg>
+<status status="PASS" start="2025-05-03T19:33:52.094290" elapsed="0.115614"/>
+</kw>
+<kw name="Preencher formulario campo Descricao" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[3]/label</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.210377" elapsed="0.014936"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.225487" elapsed="0.012534"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:52.238388" level="INFO">Typing text 'Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Rollover para Anti-Ghosting em 100% das Teclas - Funcionamento da Tecla Win Alternável (Pressione FN+Win para Desligar / Ligar a Tecla) - Padrão ABNT2 - Feito Especialmente para o Mercado Brasileiro - O primeiro do Mundo em ABNT2 com teclas Padrão Double Injection - Fabricado com o Renomado Switch Mecânico Outemu: Brown - Outemu Brown: Feedback Tátil, Resistência Média, Sem Clique Audível - Iluminação com Leds Vermelhos - Construção Robusta em Metal e Plástico ABS para maior Durabilidade - Switch removível' into text field 'xpath=//textarea[@placeholder="Descreva o produto"]'.</msg>
+<arg>xpath=//textarea[@placeholder="Descreva o produto"]</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.238184" elapsed="0.719052"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-03T19:33:52.957637" level="INFO">${TEXTO_DESCRICAO} = Características: - Marca: Redragon - Modelo: K552 Especificações: - Teclado Mecânico de Alto Desempenho - 12 Teclas para controle Multimídia - Controle de Iluminação "On-The-Fly" - Sistema Nº Key Roll...</msg>
+<arg>${TEXTO_DESCRICAO}</arg>
+<arg>${DESCRICAO}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.957426" elapsed="0.000268"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:52.210168" elapsed="0.747596"/>
+</kw>
+<kw name="Deve poder clicar no botao Salvar" owner="page_cadastro_produto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.958240" elapsed="0.015724"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-03T19:33:52.974308" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]'.</msg>
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[4]/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-03T19:33:52.974131" elapsed="0.063061"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:52.958027" elapsed="0.079279"/>
+</kw>
+<kw name="Devera ser exibida mensagem de obrigatoriedade no campo Nome" owner="page_cadastro_produto">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div/form/div[1]/p</arg>
+<arg>Nome é obrigatório</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-03T19:33:53.037988" elapsed="0.014991"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:53.037666" elapsed="0.015418"/>
+</kw>
+<kw name="Fechar navegador" owner="hooks" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-03T19:33:53.053807" elapsed="2.142394"/>
+</kw>
+<status status="PASS" start="2025-05-03T19:33:53.053563" elapsed="2.142737"/>
+</kw>
+<tag>campos_nome_vazios</tag>
+<status status="PASS" start="2025-05-03T19:33:49.368028" elapsed="5.828536"/>
+</test>
+<status status="PASS" start="2025-05-03T19:33:16.359742" elapsed="38.837957"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cadastro_campos_vazios</stat>
+<stat pass="1" fail="0" skip="0">cadastro_dados_invalidos</stat>
+<stat pass="1" fail="0" skip="0">cadastro_dados_validos</stat>
+<stat pass="1" fail="0" skip="0">campos_nome_vazios</stat>
+<stat pass="1" fail="0" skip="0">editar_cadastro</stat>
+<stat pass="1" fail="0" skip="0">excluir_cadastro</stat>
+</tag>
+<suite>
+<stat name="Test Cadastro Produto" id="s1" pass="6" fail="0" skip="0">Test Cadastro Produto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
