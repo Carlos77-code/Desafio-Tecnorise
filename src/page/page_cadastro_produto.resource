@@ -170,8 +170,13 @@ Preencher campo Preco com valor
 Devera exibir mensagem de obrigatoriedade no campo Preco
     [Arguments]    ${mensagem}
     Should Be Equal As Strings    ${mensagem}    Digite um número.
-    Sleep    3s
 
 
     ###################    Cenário 06   ###################
 
+
+
+
+    ###################    Cenário 07   ###################
+Validando lista de produtos cadastrados
+    Capture Page Screenshot

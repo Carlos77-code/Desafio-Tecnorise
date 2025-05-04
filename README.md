@@ -33,6 +33,7 @@ DESAFIO-TECNORISE/
 │
 ├── venv/
 ├── README.md
+├── .gitignore
 └── requirements.txt
 ```
 
@@ -49,8 +50,12 @@ DESAFIO-TECNORISE/
 
 # 3. Setup do Projeto
 ```
+# Pré-requisitos
+- Python 3.11 instalado
+- Git instalado
+
 # Clonar repositório
-git clone <link-do-repo>
+git clone https://github.com/Carlos77-code/Desafio-Tecnorise.git
 
 # Criar ambiente virtual
 python -m venv venv
@@ -63,6 +68,9 @@ pip install -r requirements.txt
 # Executar testes
 robot --outputdir reports/logs .\test\suites\test_cadastro_produto.robot
 ```
+
+### Observação: a aplicação testada não persiste os dados após o reload. Isso limita a criação de testes de listagem e verificação de consistência ao atualizar a página.
+
 
 # 4. Estratégia de Automação
 - Design Pattern Utilizado: Page Object Model com recursos separados por responsabilidade.
@@ -82,7 +90,7 @@ robot --outputdir reports/logs .\test\suites\test_cadastro_produto.robot
 | 004 | Web            | Campos em branco   | Tenta cadastrar sem preencher nome e preço                  | Mensagens de obrigatoriedade são exibidas                   |
 | 005 | Web            | Dados inválidos    | Insere letras no campo de preço                             | Tooltip do navegador: "Digite um número."                   |
 | 006 | Web            | Nome em branco     | Apenas preenche preço e descrição                           | Mensagem de obrigatoriedade no campo nome                   |
-
+| 007  | Web           | Cadastros múltiplos válidos    | Preenche e cadastra mais de um produto com dados válidos   | Todos os produtos aparecem corretamente na listagem     |
 
 # Documentação Gerencial – Resumo e Estratégia
 ### Objetivo

@@ -87,4 +87,20 @@ Cenario 06: Cadastro de produto campos Nome em branco
     Preencher formulario campo Descricao
     Deve poder clicar no botao Salvar
     Devera ser exibida mensagem de obrigatoriedade no campo Nome
-    
+
+Cenario 07: Cadastros multiplos de produto dados validos
+    [Tags]    cadastrar_multiplos_produtos
+    FOR    ${i}    IN RANGE    1    11
+        Validar pagina deve conter o title    Teste automação QA
+        Deve poder clicar no botao Adicionar Produto
+        Validar se abriu modal com formulario para cadastro
+        Preencher formulario campo Nome    Teclado
+        Preencher formulario campo Preco    160.00
+        Preencher formulario campo Descricao
+        Deve poder clicar no botao Salvar
+        Validar tela de Produtos Cadastrados
+        Validar Produtos Cadastrados
+        Validar Valor do Produto Cadastrado
+        Validar Descricao do Produto Cadastrado
+    END
+    Validando lista de produtos cadastrados
